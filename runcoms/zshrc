@@ -14,6 +14,8 @@ fi
 
 if [[ -d "$HOME/MAWork/MA_vagrant/apps/www" ]]; then
 	cd $HOME/MAWork/MA_vagrant/apps/www
+elif [[ -d "/data/apps/www" ]]; then
+	cd /data/apps/www
 elif [[ -d "$HOME/Dropbox/JDWork/Projects" ]]; then
 	cd $HOME/Dropbox/JDWork/Projects
 fi
