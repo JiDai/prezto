@@ -77,8 +77,15 @@ function prompt_sorin_precmd {
   # Format PWD.
   prompt_sorin_pwd
 
+  # Set python-info parameters.
+  export VIRTUAL_ENV_DISABLE_PROMPT='0'
+  python-info
+
+  # Set node-info parameters
+  node-info
+
   # Define prompts.
-  RPROMPT='${editor_info[overwrite]}%(?:: %F{1}⏎%f)${VIM:+" %B%F{6}V%f%b"}'
+  RPROMPT='${node_info[version]}${python_info[virtualenv]}${editor_info[overwrite]}%(?:: %F{1}⏎%f)${VIM:+" %B%F{6}V%f%b"}'
 
   # Kill the old process of slow commands if it is still running.
   if (( _prompt_sorin_precmd_async_pid > 0 )); then

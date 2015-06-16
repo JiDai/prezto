@@ -12,4 +12,8 @@ fi
 
 # Customize to your needs...
 
-cd ~/MAWork/MA_vagrant/apps/www
+if [[ -d "$HOME/MAWork/MA_vagrant/apps/www" ]]; then
+	cd $HOME/MAWork/MA_vagrant/apps/www
+elif [[ -d "$HOME/Dropbox/JDWork/Projects" ]]; then
+	cd $HOME/Dropbox/JDWork/Projects
+fi
