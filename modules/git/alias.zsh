@@ -89,8 +89,8 @@ alias ggv='git grep --invert-match'
 alias ggw='git grep --word-regexp'
 
 # Index (i)
-alias gia='git add'
-alias giA='git add --patch'
+alias gia='git add --patch'
+alias giA='git add'
 alias giu='git add --update'
 alias gid='git diff --no-ext-diff --cached'
 alias giD='git diff --no-ext-diff --cached --word-diff'
