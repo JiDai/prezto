@@ -42,7 +42,7 @@ if (( $+commands[virtualenvwrapper.sh] )); then
   # Disable the virtualenv prompt.
   VIRTUAL_ENV_DISABLE_PROMPT=1
 
-  source "$commands[virtualenvwrapper.sh]"
+  #source "$commands[virtualenvwrapper.sh]"
 fi
 
 #
