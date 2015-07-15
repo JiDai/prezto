@@ -2,7 +2,7 @@
 # Gulp
 #
 
-function _gulp_completion0() {
+function _gulp_completion() {
   # Grab tasks
   compls=$(gulp --tasks-simple)
   completions=(${=compls})
