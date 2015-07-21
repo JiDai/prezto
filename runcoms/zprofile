@@ -72,8 +72,3 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
-
-#
-# Aliases
-#
-alias ma_sync="rsync -rv jordid@dev.meilleursagents.org:/home/jordid/meilleursagents/ ./"
