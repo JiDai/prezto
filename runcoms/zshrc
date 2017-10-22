@@ -100,8 +100,13 @@ export PATH="/Users/jordid/MAWork/Lib/google-cloud-sdk/bin:$PATH" # Add GCloud c
 
 alias venv="source ~/.virtualenvs/py34-www/bin/activate"
 alias ma_tunnel='ssh -L 5432:localhost:5432 dev.meilleursagents.org'
-alias ma_sync_to_dev="rsync -rlK --delete --exclude 'temp' --exclude 'data1' --exclude 'vendors' --exclude 'static/build' --exclude 'static/mypro' --exclude 'newrelic.ini' --exclude 'node_modules' --exclude 'build' --exclude 'bower_components' --exclude '.git' /Users/jordid/MAWork/MeilleursAgents/ jordid@dev.meilleursagents.org:/home/jordid/meilleursagents/"
-alias pi_sync_to_dev="rsync -rlK --delete --exclude 'vendors' --exclude 'newrelic.ini' --exclude '.idea' --exclude 'node_modules' --exclude 'build' --exclude 'bower_components' --exclude '.git' /Users/jordid/MAWork/PrixImmobilier/ jordid@dev.meilleursagents.org:/home/jordid/PrixImmobilier/"
+alias ma_sync_to_dev="rsync -rlK --delete --exclude 'temp' --exclude 'data1' --exclude 'vendors' --exclude
+'static/build' --exclude 'static/mypro' --exclude 'newrelic.ini' --exclude 'node_modules' --exclude 'build' --
+exclude 'bower_components' --exclude '.git' /Users/jordid/MAWork/MeilleursAgents/ jordid@dev.meilleursagents.org:/
+home/jordid/meilleursagents/"
+alias pi_sync_to_dev="rsync -rlK --delete --exclude 'vendors' --exclude 'newrelic.ini' --exclude '.idea' --
+exclude 'node_modules' --exclude 'build' --exclude 'bower_components' --exclude '.git' /Users/jordid/MAWork/
+PrixImmobilier/ jordid@dev.meilleursagents.org:/home/jordid/PrixImmobilier/"
 
 alias rm_node_modules="find . -name \"nodemodules\" -type d -prune -exec rm -rf '{}' +"
 
@@ -112,6 +117,18 @@ alias ttts="timetracker task stop"
 alias ttjl="timetracker journal list"
 alias ttja="timetracker journal add"
 alias ttr="timetracker report"
+
+alias selenium-chrome="open vnc://localhost:secret@localhost:5900"
+alias selenium-firefox="open vnc://localhost:secret@localhost:5901"
+
+function work () {
+  if [ "$1" != "" ]; then
+    cd ~/MAWork/MeilleursAgents/apps/$1
+  else
+    cd ~/MAWork/MeilleursAgents/
+  fi
+}
+
 
 if [[ -s "$HOME/.zsh_custom" ]]; then
     source "$HOME/.zsh_custom"
