@@ -121,6 +121,8 @@ alias ttr="timetracker report"
 alias selenium-chrome="open vnc://localhost:secret@localhost:5900"
 alias selenium-firefox="open vnc://localhost:secret@localhost:5901"
 
+alias git_clean_branches="git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d"
+
 function work () {
   if [ "$1" != "" ]; then
     cd ~/MAWork/MeilleursAgents/apps/$1
