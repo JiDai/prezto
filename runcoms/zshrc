@@ -96,7 +96,7 @@ export PGDATABASE=meilleursagents_dev
 export PGUSER=meilleursagents_dev
 
 export PATH="./node_modules/.bin:$PATH"
-export PATH="/Users/jordid/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 export PATH="/Users/jordid/MAWork/Lib/google-cloud-sdk/bin:$PATH" # Add GCloud cli
 
 #
