@@ -119,8 +119,12 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-#zstyle ':prezto:module:prompt' theme 'jidai'
-zstyle ':prezto:module:prompt' theme 'powerlevel9k'
+zstyle ':prezto:module:prompt' theme 'jidai'
+# zstyle ':prezto:module:prompt' theme 'powerlevel9k'
+# zstyle ':prezto:module:prompt' theme 'powerlevel'
+# zstyle ':prezto:module:prompt' theme 'sorin'
+# zstyle ':prezto:module:prompt' theme 'agnoster'
+# zstyle ':prezto:module:prompt' theme 'pure'
 
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
@@ -234,42 +238,40 @@ zstyle ':prezto:module:prompt' theme 'powerlevel9k'
 # See also https://github.com/Falkor/dotfiles/blob/master/oh-my-zsh/
 # Font taken from https://github.com/stefano-meschiari/dotemacs/blob/master/SourceCodePro%2BPowerline%2BAwesome%2BRegular.ttf
 #
-POWERLEVEL9K_MODE='awesome-patched'
+# POWERLEVEL9K_MODE='awesome-patched'
 
-# Disable dir/git icons
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+# # Disable dir/git icons
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
-POWERLEVEL9K_VCS_GIT_ICON=''
-POWERLEVEL9K_VCS_STAGED_ICON='\u00b1'
-POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
-POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
-POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
-POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
+# POWERLEVEL9K_VCS_GIT_ICON=''
+# POWERLEVEL9K_VCS_STAGED_ICON='\u00b1'
+# POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
+# POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
+# POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
+# POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
 
-#POWERLEVEL9K_VCS_CLEAN_BACKGROUND_COLOR='75'
-#POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='75'
-#POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='75'
-#POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
+# #POWERLEVEL9K_VCS_CLEAN_BACKGROUND_COLOR='75'
+# #POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='75'
+# #POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='75'
+# #POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
 
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
+# POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='245'
+# POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='black'
 
-POWERLEVEL9K_NODE_VERSION_BACKGROUND="203"
-POWERLEVEL9K_NODE_VERSION_FOREGROUND="52"
-POWERLEVEL9K_VIRTUALENV_BACKGROUND="203"
+# POWERLEVEL9K_NODE_VERSION_BACKGROUND="203"
+# POWERLEVEL9K_NODE_VERSION_FOREGROUND="52"
+# POWERLEVEL9K_VIRTUALENV_BACKGROUND="203"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon dir vcs virtualenv node_version)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time time)
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status os_icon dir vcs virtualenv node_version)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time time)
 
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+# POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 
-POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
+# POWERLEVEL9K_TIME_FORMAT="%D{%H:%M}"
 
-POWERLEVEL9K_STATUS_VERBOSE=false
-export DEFAULT_USER="$USER"
-
-
+# POWERLEVEL9K_STATUS_VERBOSE=false
+# export DEFAULT_USER="$USER"
