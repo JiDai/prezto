@@ -134,23 +134,6 @@ alias selenium-firefox="open vnc://localhost:secret@localhost:5901"
 
 alias git_clean_branches="git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d"
 
-function work () {
-  if [ "$1" = "site" ]; then
-    cd ~/MAWork/MeilleursAgents/apps/www/www/frontend/site
-  elif [ "$1" = "estima" ]; then
-    cd ~/MAWork/MeilleursAgents/apps/www/www/frontend/estima
-  elif [ "$1" = "pro" ]; then
-    cd ~/MAWork/MA-SitePro/
-  elif [ "$1" = "infra" ]; then
-    cd ~/MAWork/MA-Infra/
-  elif [ "$1" != "" ]; then
-    cd ~/MAWork/MeilleursAgents/apps/$1
-  else
-    cd ~/MAWork/MeilleursAgents/
-  fi
-}
-
-
 if [[ -s "$HOME/.zsh_custom" ]]; then
     source "$HOME/.zsh_custom"
 fi
