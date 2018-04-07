@@ -135,7 +135,7 @@ alias selenium-chrome="open vnc://localhost:secret@localhost:5900"
 alias selenium-firefox="open vnc://localhost:secret@localhost:5901"
 
 alias git_clean_branches="git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d"
-alias ...="cd $(git rev-parse --show-toplevel)"
+alias ...='cd `git rev-parse --show-toplevel`'
 alias gitco="git branch | fzf | xargs git checkout"
 
 if [[ -s "$HOME/.zsh_custom" ]]; then
