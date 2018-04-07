@@ -16,17 +16,12 @@ export LANG="en_US.UTF-8"
 export WORKON_HOME=$HOME/.virtualenvs
 export PYENV_VERSION=3.4.2
 
+export ZSH_CUSTOM="$HOME/.zprezto/"
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-
-#
-# Load ZSH classic plugins
-#
-
-export ZSH_CUSTOM="$HOME/.zprezto/"
-source $HOME/.zprezto/plugins/yarn-autocompletions/yarn-autocompletions.plugin.zsh
 
 #
 # Customize...
@@ -140,6 +135,8 @@ alias selenium-chrome="open vnc://localhost:secret@localhost:5900"
 alias selenium-firefox="open vnc://localhost:secret@localhost:5901"
 
 alias git_clean_branches="git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d"
+alias ...="cd $(git rev-parse --show-toplevel)"
+alias gitco="git branch | fzf | xargs git checkout"
 
 if [[ -s "$HOME/.zsh_custom" ]]; then
     source "$HOME/.zsh_custom"
