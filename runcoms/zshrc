@@ -9,12 +9,10 @@
 # Profiling mode START
 # zmodload zsh/zprof
 
-export LANGUAGE="en_US.UTF-8"
-export LC_CTYPE="en_US.UTF-8"
-export LANG="en_US.UTF-8"
+export ZSH_CUSTOM="$HOME/.zprezto/"
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PYENV_VERSION=3.4.2
+fpath=(~/.zprezto/my_completions $fpath)
+autoload -U compinit && compinit
 
 export ZSH_CUSTOM="$HOME/.zprezto/"
 
@@ -22,16 +20,6 @@ export ZSH_CUSTOM="$HOME/.zprezto/"
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
-
-#
-# Customize...
-#
-
-export VISUAL=vim
-export EDITOR="$VISUAL"
-
-fpath=(~/.zprezto/my_completions $fpath)
-autoload -U compinit && compinit
 
 #
 # History filter with command line beginning
@@ -46,66 +34,32 @@ bindkey '\e[A' up-line-or-beginning-search
 bindkey '\eOB' down-line-or-beginning-search
 bindkey '\e[B' down-line-or-beginning-search
 
-#
-# Python stuff
-#
-
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export PATH="$HOME/.pyenv/bin:$PATH"
-export PYENV_ROOT="$HOME/.pyenv"
-export PYTHONSTARTUP=~/.pythonrc.py
-
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export VIRTUALENVWRAPPER_LOG_DIR="$WORKON_HOME"
-    export VIRTUALENVWRAPPER_HOOK_DIR="$WORKON_HOME"
-    source /usr/local/bin/virtualenvwrapper.sh
-    [[ -f ~/.virtualenv_current ]] && workon $(cat ~/.virtualenv_current)
-fi
-
-
-if [ -d $PYENV_ROOT ]; then
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
-
-#
-# NVM
-#
-
-export NVM_DIR="$HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#
-# RVM
-#
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-
-#
-# Environment
-#
-
-export MA_INSTANCE=jordid
-export MA_ENV=dev
-
-export PGHOST=dev.meilleursagents.org
-export PGDATABASE=meilleursagents_dev
-export PGUSER=meilleursagents_dev
-
-export PATH="./node_modules/.bin:$PATH"
-export PATH="$HOME/bin:$PATH"
-export PATH="/Users/jordid/MAWork/Lib/google-cloud-sdk/bin:$PATH" # Add GCloud cli
 
 #
 # Use hub as git client, alias hub=git
 #
 
 eval "$(hub alias -s)"
+
+
+#
+# Load Pyenv
+#
+
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+
+  pyenv virtualenvwrapper
+fi
+
+
+#
+# Load NVM
+#
+
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 #
 # Aliases
@@ -125,11 +79,12 @@ alias rm_node_modules="find . -name \"nodemodules\" -type d -prune -exec rm -rf 
 
 alias tt="timetracker"
 alias tttl="timetracker task list"
+alias tttr="timetracker task report"
 alias tttb="timetracker task start"
 alias ttts="timetracker task stop"
+alias ttte="timetracker task edit"
 alias ttjl="timetracker journal list"
 alias ttja="timetracker journal add"
-alias ttr="timetracker report"
 
 alias selenium-chrome="open vnc://localhost:secret@localhost:5900"
 alias selenium-firefox="open vnc://localhost:secret@localhost:5901"

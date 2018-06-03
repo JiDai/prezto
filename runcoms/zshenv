@@ -9,3 +9,69 @@
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+
+
+export LANGUAGE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PYENV_VERSION=3.4.2
+
+#
+# Customize...
+#
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+#
+# Environment
+#
+
+export MA_INSTANCE=jordid
+export MA_ENV=dev
+
+export PGHOST=dev.meilleursagents.org
+export PGDATABASE=meilleursagents_dev
+export PGUSER=meilleursagents_dev
+
+export PATH="./node_modules/.bin:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="/Users/jordid/MAWork/Lib/google-cloud-sdk/bin:$PATH" # Add GCloud cli
+export ANSIBLE_VAULT_PASSWORD_FILE="$HOME/.vagrant_vault_pass.txt"
+
+#
+# Python stuff
+#
+
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PYTHONSTARTUP=~/.pythonrc.py
+
+
+#
+# NVM
+#
+
+export NVM_DIR="$HOME/nvm"
+
+#
+# RVM
+#
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
