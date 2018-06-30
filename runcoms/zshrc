@@ -93,6 +93,10 @@ alias git_clean_branches="git branch --merged | egrep -v \"(^\\*|master|dev)\" |
 alias ...='cd `git rev-parse --show-toplevel`'
 alias gitco="git branch | fzf | xargs git checkout"
 
+function mkcd () {
+    mkdir $1 && cd $1
+}
+
 if [[ -s "$HOME/.zsh_custom" ]]; then
     source "$HOME/.zsh_custom"
 fi
